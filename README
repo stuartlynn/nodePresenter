@@ -1,15 +1,15 @@
 == NodePresenter
 
-NodePresenter is a very small app that combines the awesome http://shama.github.com/jmpress.js/ project, http://nodejs.org/ and http://socket.io/ to allow remote controll of your jmpress presentations. 
+NodePresenter is a very small app that combines the awesome http://shama.github.com/jmpress.js/ project, http://nodejs.org/ and http://socket.io/ to allow remote control of your jmpress presentations. 
 
 
 == Getting Started
 
 1. First install the dependencies 
-       <tt>npm install .</tt> 
+       npm install .
 
 2. Fire up the app 
-       <tt>node app.js<tt>
+       node app.js
 
 3. Go to http://localhost:3000/ and you'll see a sample presentation:
   
@@ -17,3 +17,10 @@ NodePresenter is a very small app that combines the awesome http://shama.github.
 4. Navigate to http://localhost:3000/ on your mobile browser (or desktop browser for that matter) where you need to replace localhost with your machines ip, to see the remote.
 
 5. If your device supports <tt>ondeviceorientation</tt> you can tip it from side to side to trigger slide changes.
+
+
+-- Development
+
+This is very much a hobby but I hope it will be usefull to someone.
+
+
