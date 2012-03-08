@@ -16,7 +16,7 @@ NodePresenter is a very small app that combines the awesome http://shama.github.
 
 4. Navigate to http://localhost:3000/ on your mobile browser (or desktop browser for that matter) where you need to replace localhost with your machines ip, to see the remote.
 
-5. If your device supports <tt>ondeviceorientation</tt> you can tip it from side to side to trigger slide changes.
+5. If your device supports ondeviceorientation you can tip it from side to side to trigger slide changes.
 
 
 -- Development
