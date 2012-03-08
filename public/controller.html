@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+
+     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+        <script>
+          var socket = io.connect(window.location.origin);
+          socket.on('nexta', function (data) {
+          });
+
+
+          $(document).ready(function(){
+            $("#next").click(function(){
+                socket.emit("next", {});
+            });
+             $("#prev").click(function(){
+                socket.emit("prev", {});
+            });
+
+            moved=false
+
+            window.ondeviceorientation = function(event) {
+                if(event.gamma > 60 && moved==false){
+                    socket.emit("next", {});
+                    moved = true;
+                }
+                if(event.gamma < 10 && event.gamma > -10 && moved==true){
+                    moved= false ;
+                }
+                if(event.gamma < -60 && moved==false){
+                    socket.emit("prev", {});
+                    moved = true;
+
+                }
+            }
+
+
+          });   
+        </script>
+
+        <style>
+            body{
+                -webkit-text-size-adjust:none;
+                font-family:Helvetica, Arial, Verdana, sans-serif;
+                padding:5px;
+            }
+            
+            .button{
+                width:200px;
+                height:100px;
+                border:1px solid black;
+                display: inline-block;
+
+            }
+        </style>
+  
+</head>
+<body>
+    <div id='orient'>
+    </div>
+    <div id='status'>
+        connecting
+    </div>
+  
+    <div class='button' id='prev'>
+        PREV
+    </div>
+
+    <div class='button' id='next'>
+        NEXT
+    </div>
+
+
+</body>
+</html>
